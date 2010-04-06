@@ -1,0 +1,18 @@
+<p>
+  Hi <%= @user.login %>
+</p>
+<p>
+  <% if type == "activate_account" %>
+  Thank you for signing up for this site. Please click the following link to verify your email address:
+  <% elsif type == "forgot password" %>
+  Please click on the link below to change your password:
+  <% end %>
+  <br />
+  <%= @activation_url %>
+  <br />
+  If the above URL does not work, try copying and pasting it into your browser. If you continue to have problems, please feel free to contact us.
+</p>
+<p>
+  Regards,
+  Suman Mukherjee.
+</p>
