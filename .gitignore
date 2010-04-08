@@ -1,0 +1,15 @@
+# Ignore database yaml configuration file
+config/database.yml
+
+# Ignore backup and swap files
+*~
+*.swp
+
+# Ignore the log files
+log/*
+
+# Ignore netbeans project folder and underlying files
+nbproject/*
+nbproject/**/*
+
+
