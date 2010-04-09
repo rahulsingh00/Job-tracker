@@ -66,9 +66,7 @@ class UsersController < ApplicationController
   
   def process_forgot_password
     user = User.find_by_email(params[:user][:email])
-    user.reset_perishable_token!
-    activation_url = "http://localhost:3000/retrieve_password/#{user.perishable_token}"
-    UserMailer.deliver_activation_mail(user,activation_url,"forgot password")
+    UserMailer.deliver_activation_mail(user,"forgot_password")
     redirect_to login_url
   end
 

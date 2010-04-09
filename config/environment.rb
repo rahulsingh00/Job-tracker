@@ -27,7 +27,7 @@ Rails::Initializer.run do |config|
   # Skip frameworks you're not going to use. To use Rails without a database,
   # you must remove the Active Record framework.
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
-apache
+
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
   config.active_record.observers = :user_observer
@@ -43,13 +43,5 @@ end
 
 ActionMailer::Base.delivery_method = :smtp 
 
-ActionMailer::Base.smtp_settings = {
-  :enable_starttls_auto => true,
-  :address => "smtp.gmail.com",
-  :port => 587,
-  :domain => "todolist-tracker.heroku.com",
-  :authentication => :plain,
-  :user_name => ENV['GMAIL_SMTP_USERNAME'],
-  :password => ENV['GMAIL_SMTP_PASSWORD']
-}
+
 
