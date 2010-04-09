@@ -6,7 +6,7 @@ class UserMailer < ActionMailer::Base
     @from = 'sumanmukherjee03@gmail.com'
     if type == "activate_account"
       @subject = "Activate your account"
-    elsif type == "forgot password"
+    elsif type == "forgot_password"
       @subject = "Retrieve your password"
     end
     @body = {:user => user, :type => type}
