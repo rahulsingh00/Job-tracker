@@ -20,8 +20,8 @@ config.action_mailer.smtp_settings = {
   :enable_starttls_auto => true,
   :address => "smtp.gmail.com",
   :port => 587,
-  :domain => "todolist-tracker.heroku.com",
   :authentication => :plain,
+  :domain => ENV['GMAIL_SMTP_USER'],
   :user_name => ENV['GMAIL_SMTP_USERNAME'],
   :password => ENV['GMAIL_SMTP_PASSWORD']
 }
