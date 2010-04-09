@@ -1,13 +1,16 @@
 <p>
   Hi <%= @user.login %>
 </p>
+
 <p>
-  <% if @type.strip! == "activate_account".strip! %>
+  <% if @type == "activate_account" %>
     Thank you for signing up for this site. Please click the following link to verify your email address:<br />
     <%= activate_url(:token => @user.perishable_token) %>
-  <% elsif @type.strip! == "forgot_password".strip! %>
+  <% elsif @type == "forgot_password" %>
     Please click on the link below to change your password:<br />
     <%= retrieve_password_url(:token => @user.perishable_token) %>
+  <% else %>
+    Something went wrong in the process.  
   <% end %>
   <br />
   If the above URL does not work, try copying and pasting it into your browser. If you continue to have problems, please feel free to contact us.
