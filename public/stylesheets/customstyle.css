@@ -176,9 +176,9 @@ img {
 }
 
 #errorExplanation {
-  width: 600px;
+  width: 686px;
   border: 2px solid red;
-  -moz-border-radius: 5px;
+  -moz-border-radius: 15px;
   padding: 5px;
   margin: 3px auto;
   background-color: #83142E;
@@ -193,7 +193,7 @@ img {
 }
 
 #errorExplanation p {
-  color: #8F6800;
+  color: #000000;
   margin-bottom: 0;
   padding: 2px;
   padding-left: 15px;

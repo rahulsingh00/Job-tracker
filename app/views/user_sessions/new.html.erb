@@ -1,8 +1,9 @@
+<%= error_messages_for :user_session, :header_message => "Please Try Again!", :message => "We had some problems logging you in." %>
+
 <div class="middlebox">
   <h1>Login</h1>
    
   <% form_for @user_session, :url => user_session_path do |f| %>
-    <%= f.error_messages %>
     <ul class = "displaylist">
       <li>
         <span><%= f.label :login %></span>

@@ -1,8 +1,10 @@
+<%= error_messages_for :user, :header_message => "Please Try Again!", :message => "We had some problems in updating your account." %>
+
+
 <div class="middlebox">
-  <h1>Edit My Account</h1>
+  <h1>Edit Account</h1>
    
   <% form_for @user, :url => account_path do |f| %>
-    <%= f.error_messages %>
     <%= render :partial => "form", :object => f %>
     <ul class="displaylist">
       <li>
