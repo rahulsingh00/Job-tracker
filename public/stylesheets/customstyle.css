@@ -96,11 +96,11 @@ img {
 }
 
 #main .middlebox a {
-  color: #3B455F;
+  color: #8976B7;
 }
 
 #main .middlebox a:hover {
-  color: #4F5D84;
+  color: #B2FF5F;
 }
 
 #main .middlebox h1 {
@@ -171,13 +171,16 @@ img {
   display: inline-block;
 }
 
+.fieldWithErrors input {
+  background-color: #D07872 !important;
+}
+
 .fieldWithErrors label{
   border:none !important;
 }
 
 #errorExplanation {
   width: 686px;
-  border: 2px solid red;
   -moz-border-radius: 15px;
   padding: 5px;
   margin: 3px auto;
