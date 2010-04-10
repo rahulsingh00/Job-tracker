@@ -1,38 +1,42 @@
-<p>
-  <b>Login:</b>
-  <%=h @user.login %>
-</p>
- 
-<p>
-  <b>Login count:</b>
-  <%=h @user.login_count %>
-</p>
- 
-<p>
-  <b>Last request at:</b>
-  <%=h @user.last_request_at %>
-</p>
- 
-<p>
-  <b>Last login at:</b>
-  <%=h @user.last_login_at %>
-</p>
- 
-<p>
-  <b>Current login at:</b>
-  <%=h @user.current_login_at %>
-</p>
- 
-<p>
-  <b>Last login ip:</b>
-  <%=h @user.last_login_ip %>
-</p>
- 
-<p>
-  <b>Current login ip:</b>
-  <%=h @user.current_login_ip %>
-</p>
- 
- 
-<%= link_to 'Edit', edit_account_path %> |
-<%= link_to 'Logout', logout_path %>
+<div class="middlebox">
+  <h1>Account information</h1>
+
+  <ul class = "displaylist">
+    <li>
+      <span>Login:</span>
+      <%=h @user.login %>
+    </li>
+    <li>
+      <span>Email:</span>
+      <%=h @user.email %>
+    </li>
+    <li>
+      <span>Login count:</span>
+      <%=h @user.login_count %>
+    </li>
+    <li>
+      <span>Last request at:</span>
+      <%=h @user.last_request_at %>
+    </li>
+    <li>
+      <span>Last login at:</span>
+      <%=h @user.last_login_at %>
+    </li>
+    <li>
+      <span>Current login at:</span>
+      <%=h @user.current_login_at %>
+    </li>
+    <li>
+      <span>Last login ip:</span>
+      <%=h @user.last_login_ip %>
+    </li>
+    <li>
+      <span>Current login ip:</span>
+      <%=h @user.current_login_ip %>
+    </li>
+    <li>
+      <span></span>
+      <div class="actionlink"><%= link_to 'Edit', edit_account_path %></div>
+    </li>
+  </ul>
+</div>

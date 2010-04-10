@@ -1,10 +1,15 @@
-<h1>Register</h1>
- 
-<% form_for @user, :url => account_path do |f| %>
-  <%= f.error_messages %>
-  <%= render :partial => "form", :object => f %>
-  <%= f.submit "Register" %>
-<% end %>
+<div class="middlebox">
+  <h1>Register</h1>
+   
+  <% form_for @user, :url => account_path do |f| %>
+    <%= f.error_messages %>
+    <%= render :partial => "form", :object => f %>
+    <ul class="displaylist">
+      <li>
+        <span></span>
+        <%= f.submit "Register" %>&nbsp;<div class="actionlink"><%= link_to 'Cancel', login_path %></div>
+      </li>
+    </ul>
+  <% end %>
+</div>
 
-<br />
-<%= link_to 'Login', login_path %>

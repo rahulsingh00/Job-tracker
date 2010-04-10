@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  layout 'job_tracker'
+  
   before_filter :require_no_user, :only => [:new, :create, :activate, :forgot_password, :process_forgot_password, :retrieve_password, :reset_password]
   before_filter :require_user, :only => [:show, :edit, :update]
   before_filter :load_user_using_perishable_token, :only => [:activate, :retrieve_password]

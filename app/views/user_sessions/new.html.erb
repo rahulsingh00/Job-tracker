@@ -1,18 +1,30 @@
-<h1>Login</h1>
- 
-<% form_for @user_session, :url => user_session_path do |f| %>
-  <%= f.error_messages %>
-  <%= f.label :login %><br />
-  <%= f.text_field :login %><br />
-  <br />
-  <%= f.label :password %><br />
-  <%= f.password_field :password %><br />
-  <br />
-  <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
-  <br />
-  <%= f.submit "Login" %>
-<% end %>
+<div class="middlebox">
+  <h1>Login</h1>
+   
+  <% form_for @user_session, :url => user_session_path do |f| %>
+    <%= f.error_messages %>
+    <ul class = "displaylist">
+      <li>
+        <span><%= f.label :login %></span>
+        <%= f.text_field :login %>
+      </li>
+      <li>
+        <span><%= f.label :password %></span>
+        <%= f.password_field :password %>
+      </li>
+      <li>
+        <span><%= f.label :remember_me %></span>
+        <%= f.check_box :remember_me %>
+      </li>
+      <li>
+        <span></span>
+        <%= f.submit "Login" %>
+      </li>
+      <li>
+        <span></span><%= link_to 'Register', new_account_path %>&nbsp;|&nbsp;<%= link_to 'Forgot password', forgot_password_path %>
+      </li>  
+    </ul>
+  <% end %>
+</div>
 
-<%= link_to 'Register', new_account_path %> |
-<%= link_to 'Forgot password', forgot_password_path %>
 

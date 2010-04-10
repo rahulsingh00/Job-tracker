@@ -22,8 +22,11 @@ Rails::Initializer.run do |config|
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
-  # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
-
+  if RAILS_ENV != 'production'
+   config.plugins = [ :authlogic]
+  else
+   config.plugins = [:all]
+  end
   # Skip frameworks you're not going to use. To use Rails without a database,
   # you must remove the Active Record framework.
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]

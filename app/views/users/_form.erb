@@ -1,11 +1,18 @@
-<%= form.label :login %><br />
-<%= form.text_field :login %><br />
-<br />
-<%= form.label :email %><br />
-<%= form.text_field :email %><br />
-<br />
-<%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
-<%= form.password_field :password %><br />
-<br />
-<%= form.label :password_confirmation %><br />
-<%= form.password_field :password_confirmation %><br />
+<ul class="displaylist">
+  <li>
+  <span><%= form.label :login %></span>
+  <%= form.text_field :login %>
+  </li>
+  <li>
+  <span><%= form.label :email %></span>
+  <%= form.text_field :email %>
+  </li>
+  <li>
+  <span><%= form.label :password, form.object.new_record? ? nil : "Change password" %></span>
+  <%= form.password_field :password %>
+  </li>
+  <li>
+  <span><%= form.label :confirm_password %></span>
+  <%= form.password_field :password_confirmation %>
+  </li>
+</ul>
