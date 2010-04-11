@@ -208,6 +208,9 @@ img {
   list-style: square;
 }
 
+#recaptcha_widget_div {
+  display: inline-block;
+}
 
 /*
 .accordion {

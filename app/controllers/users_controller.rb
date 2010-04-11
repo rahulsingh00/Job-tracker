@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
-    if @user.save
+    if verify_recaptcha(:model => @user, :message => "Captcha was wrong") && @user.save
       flash[:notice] = "Account registered.Please follow the link in the activation mail to activate your account!"
       redirect_back_or_default account_url
     else
@@ -67,10 +67,15 @@ class UsersController < ApplicationController
   
   def process_forgot_password
     user = User.find_by_email(params[:user][:email])
-    UserMailer.deliver_activation_mail(user,"forgot_password")
-    redirect_to login_url
+    if verify_recaptcha && user
+      UserMailer.deliver_activation_mail(user,"forgot_password")
+      redirect_to login_url
+    else
+      flash[:notice] = "You either entered a wrong email or a wrong captcha. Please try again!"
+      render :action => 'forgot_password'
+    end  
   end
-
+  
   private
 
   def load_user_using_perishable_token

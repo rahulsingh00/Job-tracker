@@ -1,4 +1,4 @@
-<%= error_messages_for :user, :header_message => "Please Try Again!", :message => "We had some problems in the registration process." %>
+<%= error_messages_for :user, :header_message => "We encountered the following errors :- " %>
 
 <div class="middlebox">
   <h1>Register</h1>
@@ -6,6 +6,16 @@
   <% form_for @user, :url => account_path do |f| %>
     <%= render :partial => "form", :object => f %>
     <ul class="displaylist">
+      <li>
+        <div>
+          <div style="width:150px;float:left;">
+            <label>Captcha image</label>
+          </div>
+          <div>
+            <%= recaptcha_tags %>
+          </div>
+        </div>
+      </li>
       <li>
         <span></span>
         <%= f.submit "Register" %>&nbsp;<div class="actionlink"><%= link_to 'Cancel', login_path %></div>
