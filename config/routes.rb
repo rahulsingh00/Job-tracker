@@ -1,12 +1,28 @@
 ActionController::Routing::Routes.draw do |map|
-  
-  map.resource :user_session, :only => [:create]
-  map.resource :account, :controller => 'users'
-  map.login '/login', :controller => 'user_sessions', :action => 'new'
-  map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
-  map.activate '/activate/:token', :controller => 'users', :action => 'activate'
-  map.forgot_password '/forgot_password', :controller => 'users', :action => 'forgot_password'
-  map.retrieve_password '/retrieve_password/:token', :controller => 'users', :action => 'retrieve_password'
+  map.resources :tasks
+
+
+  map.with_options :conditions => { :subdomain => true } do |subdomain|
+#    subdomain.root :controller => "projects"
+    subdomain.resources :tasks
+
+    subdomain.resources :projects
+
+
+    subdomain.resource :user_session, :only => [:create]
+
+    subdomain.with_options :controller => 'user_sessions' do |user_session|
+      user_session.login '/login', :action => 'new'
+      user_session.logout '/logout', :action => 'destroy'
+    end
+
+    subdomain.with_options :controller => 'user_sessions' do |user|
+      user.resource :account
+      user.activate '/activate/:token', :action => 'activate'
+      user.forgot_password '/forgot_password', :action => 'forgot_password'
+      user.retrieve_password '/retrieve_password/:token', :action => 'retrieve_password'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  priority: MyString
+  start_date: 2010-10-24
+  end_date: 2010-10-24
+  complexity: MyString
+
+two:
+  title: MyString
+  description: MyText
+  priority: MyString
+  start_date: 2010-10-24
+  end_date: 2010-10-24
+  complexity: MyString

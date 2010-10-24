@@ -1,0 +1,33 @@
+<p>
+  <b>Title:</b>
+  <%=h @task.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @task.description %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%=h @task.priority %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @task.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @task.end_date %>
+</p>
+
+<p>
+  <b>Complexity:</b>
+  <%=h @task.complexity %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
